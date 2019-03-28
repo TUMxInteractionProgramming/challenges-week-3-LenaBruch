@@ -11,10 +11,13 @@
      /* #4 #sweat take care of #spacing between various elements */
     margin: 0;
     padding: 0;
+    position: relative
 }
+
 
 body {
     background-color: #F5F5F5;
+
 }
 
 /* #4 # sweat #uppercase buttons and w3w locations */
@@ -22,7 +25,7 @@ button, strong {
     text-transform: uppercase;
 }
 
-
+ul #chat-messages {position: absolute; top: 80px; overflow-y: scroll;}
 
 /* APP BAR */
 
@@ -30,6 +33,19 @@ button, strong {
 h1 {
     background-color: #3F51B5;
     color: white;
+    display: flex;
+    height: 80px;
+    align-items: center;
+  
+
+}
+#channels h1 {justify-content: center;
+}
+
+/*bottom-algn moocus*/
+h1 img {position: absolute;
+    left: 5px;
+    top: 25px
 }
 
 
@@ -67,11 +83,19 @@ li img {
 /* TAB BAR */
 
 /* #4 #sweat #tab-bar */
-#tab-bar {
+#tab-bar, #chat-bar{
     /* #3 #tab-bar #container should be white */
     background-color: white;
     /* #3 #tab-bar #container has all buttons centered */
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between; 
+    align-content: space-between;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+  
+  
 }
 
 /* #4 add styles to #tab-bar #buttons */
@@ -100,6 +124,11 @@ li img {
 
 
 /* MESSAGES */
+#chat h1 img {display: flex; 
+    position: fixed;
+    left: 97%;
+
+}
 /* #4 select #specific #messages by class and re-assign element styles according to their #hierarchy in a nested way */
 .message {
     /* #3 #chat #width*/
@@ -115,6 +144,10 @@ li img {
 
 .message h3 {
     font-size: medium;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch
+    
 }
 
 .message h3 em {
@@ -136,6 +169,7 @@ li img {
     background-color: #CDDC39;
     color: black;
     text-transform: uppercase;
+    margin: 0px 8px 8px 0px
 }
 
 /* #4 left align own #messages using #margins */
@@ -143,3 +177,35 @@ li img {
     margin-left: 17.5%;
 }
 
+/* LAYOUT SECTION*/
+
+/*channels*/
+
+#channels {/*left align channel list and buttons at 40% width*/
+    position: absolute;
+    left: 0px;
+    width: 40%;
+    height: 100%;
+    align-items: stretch
+}
+#channels ul{
+    overflow-y: scroll
+}
+ul img {
+    float: right
+    
+}
+
+
+/*chat*/
+#chat {/*messages next to channel list*/
+    position: absolute;
+    right: 0px;
+    width: 60%;
+    height: 100%
+}
+
+#chat-messages {overflow-y: scroll}
+
+/*emojis*/
+#emojis {display: none}
